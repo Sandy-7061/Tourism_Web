@@ -12,6 +12,7 @@ import destinations from '../data/destinations';
 import { blogPosts } from '../data/blog';
 import offers from '../data/offers';
 import { StarRating, PriceTag, SectionHeader } from '../components/ui/GlassCard';
+import ThreeHero from '../components/home/ThreeHero';
 
 // Scroll-reveal wrapper
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -28,7 +29,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 }
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<'packages' | 'city' | 'car' | 'hotel'>('packages');
+  const [activeTab, setActiveTab] = useState<'packages' | 'city' | 'car'>('packages');
   const [searchDest, setSearchDest] = useState('');
   const [searchDate, setSearchDate] = useState('');
   const [searchGuests, setSearchGuests] = useState(2);
@@ -47,7 +48,6 @@ export default function Home() {
     if (activeTab === 'packages') navigate(`/packages?${params}`);
     else if (activeTab === 'city') navigate(`/city-tours?${params}`);
     else if (activeTab === 'car') navigate(`/car-rental?${params}`);
-    else navigate(`/hotels?${params}`);
   };
 
   const handleWishlist = (id: string) => {
@@ -66,18 +66,24 @@ export default function Home() {
             alt="India Travel Hero"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-900/70 via-navy-900/50 to-navy-900/80" />
-          {/* Floating orbs */}
-          <div className="absolute top-1/4 left-10 w-64 h-64 bg-brand-orange/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/3 right-10 w-96 h-96 bg-brand-blue/30 rounded-full blur-3xl animate-float-slow" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-900/80 via-navy-900/60 to-navy-900/90" />
+          
+          {/* Three.js 3D Animated Sky, Planes & Floating Travel Elements */}
+          <ThreeHero />
+
+          {/* Floating subtle ambient orbs */}
+          <div className="absolute top-1/4 left-10 w-64 h-64 bg-brand-orange/20 rounded-full blur-3xl animate-float pointer-events-none" />
+          <div className="absolute bottom-1/3 right-10 w-96 h-96 bg-brand-blue/30 rounded-full blur-3xl animate-float-slow pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-32 pt-40">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur border border-white/30 rounded-full px-4 py-2 text-white text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/30 rounded-full px-4 py-2 text-white text-sm font-medium mb-6 shadow-glass">
               <span className="w-2 h-2 bg-brand-orange rounded-full animate-pulse" />
-              India's #1 Premium Travel Platform
+              <span>India's #1 Premium Travel Platform</span>
+              <span className="hidden sm:inline-block text-white/40">|</span>
+              <span className="hidden sm:inline-block text-brand-orange font-semibold">✈️ 3D Flight Experience</span>
             </div>
 
             {/* Headline */}
@@ -110,25 +116,30 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="glass rounded-3xl p-6 max-w-4xl">
-            {/* Tabs */}
-            <div className="flex flex-wrap gap-2 mb-5">
-              {[
-                { key: 'packages', label: '🏔️ Tour Packages', icon: <Package size={16} /> },
-                { key: 'city', label: '🏙️ City Tours', icon: <Compass size={16} /> },
-                { key: 'car', label: '🚗 Car Rental', icon: <Car size={16} /> },
-                { key: 'hotel', label: '🏨 Hotels', icon: <Building2 size={16} /> },
-              ].map(tab => (
-                <button key={tab.key}
-                  onClick={() => setActiveTab(tab.key as typeof activeTab)}
-                  className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200
-                    ${activeTab === tab.key
-                      ? 'bg-brand-orange text-white shadow-orange'
-                      : 'bg-white/50 text-navy-700 hover:bg-white/80'
-                    }`}>
-                  {tab.label}
-                </button>
-              ))}
+            className="glass rounded-3xl p-6 max-w-4xl shadow-2xl border border-white/30">
+            {/* Tabs & Hotel notice */}
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { key: 'packages', label: '🏔️ Tour Packages', icon: <Package size={16} /> },
+                  { key: 'city', label: '🏙️ City Tours', icon: <Compass size={16} /> },
+                  { key: 'car', label: '🚗 Car Rental', icon: <Car size={16} /> },
+                ].map(tab => (
+                  <button key={tab.key}
+                    onClick={() => setActiveTab(tab.key as typeof activeTab)}
+                    className={`px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 cursor-pointer
+                      ${activeTab === tab.key
+                        ? 'bg-brand-orange text-white shadow-orange scale-105'
+                        : 'bg-white/60 text-navy-800 hover:bg-white/90'
+                      }`}>
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+              <div className="hidden lg:flex items-center gap-1.5 text-xs font-medium text-white/90 bg-navy-900/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
+                <Building2 size={13} className="text-brand-orange" />
+                <span>Hotels & Resorts included with every Package</span>
+              </div>
             </div>
 
             {/* Search fields */}
@@ -526,11 +537,20 @@ function PackageCard({ pkg, onWishlist, isWishlisted }: { pkg: any; onWishlist: 
         </div>
 
         {/* Highlights preview */}
-        <div className="flex flex-wrap gap-1 mb-4">
+        <div className="flex flex-wrap gap-1 mb-3">
           {pkg.highlights.slice(0, 3).map((h: string) => (
             <span key={h} className="bg-gray-50 text-gray-600 text-xs px-2 py-0.5 rounded-lg">{h.slice(0, 25)}</span>
           ))}
         </div>
+
+        {/* Included Hotel Stay details */}
+        {pkg.hotels && pkg.hotels.length > 0 && (
+          <div className="flex items-center gap-1.5 text-xs text-navy-800 bg-amber-50/70 border border-amber-200/60 px-2.5 py-1.5 rounded-xl mb-4">
+            <Building2 size={13} className="text-brand-orange shrink-0" />
+            <span className="font-semibold text-brand-orange">Hotel Included:</span>
+            <span className="truncate text-navy-700">{pkg.hotels[0].category}★ {pkg.hotels[0].name}</span>
+          </div>
+        )}
 
         <div className="flex items-center justify-between pt-3 border-t border-gray-100">
           <PriceTag price={pkg.price.adult} originalPrice={pkg.price.originalPrice} />

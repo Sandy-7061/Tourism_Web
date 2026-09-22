@@ -19,6 +19,7 @@ import Dashboard from './pages/Dashboard';
 import TripBuilder from './pages/TripBuilder';
 import BookingFlow from './pages/BookingFlow';
 import BookingConfirmation from './pages/BookingConfirmation';
+import CustomCursor from './components/ui/CustomCursor';
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -34,6 +35,7 @@ function App() {
   return (
     <AppProvider>
       <BrowserRouter>
+        <CustomCursor />
         <Routes>
           {/* Home — has transparent header */}
           <Route path="/" element={<Layout><Home /></Layout>} />

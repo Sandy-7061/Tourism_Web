@@ -191,19 +191,37 @@ export default function PackageDetail() {
               </Section>
 
               {/* Hotel Details */}
-              <Section id="hotels" title="Hotel Details" icon={<Hotel size={20} className="text-brand-blue" />}>
+              <Section id="hotels" title="Included Hotel & Resort Accommodations" icon={<Hotel size={20} className="text-brand-orange" />}>
+                <p className="text-sm text-gray-500 mb-4">
+                  Every Wanderly package includes premium vetted accommodations. Your room and breakfast are fully reserved and guaranteed.
+                </p>
                 <div className="space-y-4">
                   {pkg.hotels.map((hotel, i) => (
-                    <div key={i} className="flex gap-4 p-4 border border-gray-100 rounded-xl">
-                      <img src={hotel.image} alt={hotel.name} className="w-20 h-20 rounded-xl object-cover flex-shrink-0" />
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="font-semibold text-navy-900">{hotel.name}</h4>
+                    <div key={i} className="flex flex-col sm:flex-row gap-4 p-5 bg-gradient-to-r from-orange-50/40 via-white to-blue-50/30 border border-orange-100/80 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                      <img src={hotel.image} alt={hotel.name} className="w-full sm:w-32 h-28 rounded-xl object-cover flex-shrink-0 shadow-sm" />
+                      <div className="flex-1">
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                          <div className="flex items-center gap-2">
+                            <h4 className="font-bold text-navy-900 text-lg">{hotel.name}</h4>
+                            <span className="bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-0.5 rounded-full">
+                              {hotel.category} Star Luxury
+                            </span>
+                          </div>
                           <HotelStars count={hotel.category} />
                         </div>
-                        <div className="text-sm text-gray-500 mb-2">{hotel.location} · {hotel.checkIn} to {hotel.checkOut} · {hotel.roomType}</div>
-                        <div className="flex flex-wrap gap-1">
-                          {hotel.amenities.slice(0, 5).map(a => <span key={a} className="bg-gray-50 text-gray-600 text-xs px-2 py-0.5 rounded-full">{a}</span>)}
+                        <div className="text-sm text-gray-600 mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                          <span className="font-medium text-navy-800">📍 {hotel.location}</span>
+                          <span>•</span>
+                          <span>🛏️ {hotel.roomType}</span>
+                          <span>•</span>
+                          <span>🕒 Check-in {hotel.checkIn} / Check-out {hotel.checkOut}</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5 mt-2">
+                          {hotel.amenities.map(a => (
+                            <span key={a} className="bg-white/90 border border-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-lg shadow-2xs font-medium">
+                              ✓ {a}
+                            </span>
+                          ))}
                         </div>
                       </div>
                     </div>

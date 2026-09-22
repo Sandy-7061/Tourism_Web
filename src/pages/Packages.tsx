@@ -209,6 +209,15 @@ function PackageListCard({ pkg, onWishlist, wishlisted }: { pkg: any; onWishlist
         </div>
         <h3 className="font-bold text-navy-900 text-base leading-snug mb-2 line-clamp-2">{pkg.title}</h3>
         <StarRating rating={pkg.rating} showCount count={pkg.reviewCount} />
+
+        {/* Hotel stay highlight */}
+        {pkg.hotels && pkg.hotels.length > 0 && (
+          <div className="flex items-center gap-1.5 text-xs text-amber-900 bg-amber-50/80 border border-amber-200/60 px-2 py-1 rounded-lg mt-2.5">
+            <span className="text-brand-orange font-medium">🏨 {pkg.hotels[0].category}★ Hotel:</span>
+            <span className="truncate">{pkg.hotels[0].name}</span>
+          </div>
+        )}
+
         <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
           <PriceTag price={pkg.price.adult} originalPrice={pkg.price.originalPrice} />
           <Link to={`/packages/${pkg.slug}`} className="btn-primary py-1.5 px-3 text-sm">View</Link>
