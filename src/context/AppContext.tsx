@@ -98,7 +98,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const user = isLoggedIn ? {
     name: 'Rahul Sharma',
     email: 'rahul.sharma@email.com',
-    phone: '+91 98765 43210',
+    phone: '+91 9329781327',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
   } : null;
 

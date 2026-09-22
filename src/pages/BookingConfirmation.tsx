@@ -100,7 +100,9 @@ export default function BookingConfirmation() {
             {/* Contact */}
             <div className="bg-brand-blue/5 border border-brand-blue/20 rounded-xl p-4 mb-6">
               <div className="flex items-center gap-2 text-brand-blue font-semibold mb-1"><Phone size={16} /> Need help?</div>
-              <p className="text-sm text-gray-600">Call us anytime at <a href="tel:+919876543210" className="font-bold">+91 98765 43210</a> or email <a href="mailto:support@wanderly.in" className="font-bold">support@wanderly.in</a></p>
+              <p className="text-sm text-gray-600">
+                Call / WhatsApp us anytime at <a href="tel:+919329781327" className="font-bold text-brand-blue hover:underline">+91 9329781327</a> or <a href="https://wa.me/919329781327" target="_blank" rel="noreferrer" className="font-bold text-emerald-600 hover:underline">WhatsApp Chat</a> | Email <a href="mailto:info@zemtrotour.com" className="font-bold text-brand-orange hover:underline">info@zemtrotour.com</a>
+              </p>
             </div>
 
             {/* CTA Buttons */}

@@ -181,7 +181,7 @@ export default function CustomCursor() {
             className="bg-navy-900/90 backdrop-blur-md border border-brand-orange/40 text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-lg whitespace-nowrap flex items-center gap-1.5"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-ping" />
-            <span>{hoverText || 'Wander!'}</span>
+            <span>{hoverText || 'Explore!'}</span>
           </motion.div>
         )}
       </motion.div>

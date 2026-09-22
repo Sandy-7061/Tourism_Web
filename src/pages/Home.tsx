@@ -370,7 +370,7 @@ export default function Home() {
       <section className="section-pad bg-section-alt">
         <div className="max-w-7xl mx-auto container-pad">
           <Reveal>
-            <SectionHeader tag="⭐ Why Wanderly" title="Trusted by 50,000+ Travelers" center />
+            <SectionHeader tag="⭐ Why Zemtro_tour" title="Trusted by 50,000+ Travelers" center />
           </Reveal>
 
           {/* Trust badges */}
@@ -394,9 +394,9 @@ export default function Home() {
           {/* Reviews */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: 'Priya Malhotra', location: 'Delhi', rating: 5, review: 'Absolutely magical Kerala trip! The houseboat experience was a dream. Wanderly took care of every detail perfectly. Will definitely book again!', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&q=80', pkg: 'Kerala Backwaters & Beach Bliss' },
+              { name: 'Priya Malhotra', location: 'Delhi', rating: 5, review: 'Absolutely magical Kerala trip! The houseboat experience was a dream. Zemtro_tour took care of every detail perfectly. Will definitely book again!', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&q=80', pkg: 'Kerala Backwaters & Beach Bliss' },
               { name: 'Rohit Verma', location: 'Mumbai', rating: 5, review: 'The Manali snow trip was epic! Well-organized, friendly driver, great hotel. The Rohtang Pass was covered in snow — exactly what we wanted!', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&q=80', pkg: 'Manali Snow Adventure' },
-              { name: 'Ananya Gupta', location: 'Bangalore', rating: 5, review: 'Kashmir in March was breathtaking — Dal Lake frozen, Gulmarg snow-covered. Everything was perfectly arranged. Highly recommend Wanderly!', avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&q=80', pkg: 'Kashmir Paradise' },
+              { name: 'Ananya Gupta', location: 'Bangalore', rating: 5, review: 'Kashmir in March was breathtaking — Dal Lake frozen, Gulmarg snow-covered. Everything was perfectly arranged. Highly recommend Zemtro_tour!', avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&q=80', pkg: 'Kashmir Paradise' },
             ].map((review, i) => (
               <Reveal key={review.name} delay={i * 0.1}>
                 <div className="glass rounded-2xl p-6 card-hover">

@@ -67,7 +67,7 @@ export default function Destinations() {
                     </div>
                   </div>
                   <div className="absolute top-2 right-2">
-                    <span className="bg-white/90 text-gray-700 text-[10px] font-semibold px-2 py-0.5 rounded-full">{d.popularFor[0]}</span>
+                    <span className="bg-white/90 text-gray-700 text-[10px] font-semibold px-2 py-0.5 rounded-full">{dest.popularFor[0]}</span>
                   </div>
                 </Link>
               </motion.div>
@@ -85,7 +85,7 @@ export default function Destinations() {
                       <div>
                         <h3 className="font-bold text-navy-900 text-lg">{dest.name}</h3>
                         <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
-                          <MapPin size={13} /> {dest.state} · {dest.category}
+                          <MapPin size={13} /> {dest.state} · {dest.popularFor[0]}
                         </div>
                       </div>
                       <div className="flex items-center gap-1 text-sm font-semibold">

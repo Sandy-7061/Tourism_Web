@@ -80,8 +80,8 @@ export default function Hotels() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   <div className="absolute top-3 left-3 flex gap-2">
                     <span className={`text-xs font-bold px-2 py-0.5 rounded-full bg-white/90
-                      ${hotel.type === 'Luxury' ? 'text-amber-700' : hotel.type === 'Heritage' ? 'text-rose-700' : 'text-gray-700'}`}>
-                      {hotel.type}
+                      ${hotel.category === 5 ? 'text-amber-700' : hotel.category === 4 ? 'text-rose-700' : 'text-gray-700'}`}>
+                      {hotel.category}★ Hotel
                     </span>
                   </div>
                   <button onClick={() => isWishlisted(hotel.id) ? removeFromWishlist(hotel.id) : addToWishlist(hotel.id, 'Hotel')}

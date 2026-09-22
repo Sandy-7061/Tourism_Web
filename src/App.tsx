@@ -20,6 +20,7 @@ import TripBuilder from './pages/TripBuilder';
 import BookingFlow from './pages/BookingFlow';
 import BookingConfirmation from './pages/BookingConfirmation';
 import CustomCursor from './components/ui/CustomCursor';
+import WhatsAppFloatingButton from './components/ui/WhatsAppFloatingButton';
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -27,6 +28,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <Header />
       <main>{children}</main>
       <Footer />
+      <WhatsAppFloatingButton />
     </>
   );
 }

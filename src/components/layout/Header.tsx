@@ -6,6 +6,7 @@ import {
   MapPin, Package, Car, Building2, Compass, Tag, BookOpen, Star
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import logoImg from '../../assets/zemtro_tour_logo.png';
 
 const navLinks = [
   {
@@ -95,8 +96,13 @@ export default function Header() {
         <div className="bg-brand-blue text-white text-xs py-2">
           <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
             <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1"><Phone size={12} /> +91 9876 543 210</span>
-              <span className="flex items-center gap-1"><Star size={12} className="fill-yellow-400 text-yellow-400" /> 4.9 Rating · 50,000+ Happy Travelers</span>
+              <a href="tel:+919329781327" className="flex items-center gap-1 hover:text-brand-orange transition-colors">
+                <Phone size={12} /> +91 9329781327
+              </a>
+              <a href="https://wa.me/919329781327" target="_blank" rel="noreferrer" className="flex items-center gap-1 text-emerald-300 hover:text-white transition-colors">
+                <span>💬 WhatsApp: +91 9329781327</span>
+              </a>
+              <span className="hidden sm:flex items-center gap-1"><Star size={12} className="fill-yellow-400 text-yellow-400" /> 4.9 Rating · 50,000+ Happy Travelers</span>
             </div>
             <div className="flex items-center gap-3">
               <span>🌏 English</span>
@@ -111,13 +117,15 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 md:h-18">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-9 h-9 bg-brand-orange rounded-xl flex items-center justify-center shadow-orange group-hover:scale-105 transition-transform">
-                <Globe size={18} className="text-white" />
-              </div>
+            <Link to="/" className="flex items-center gap-2.5 group">
+              <img
+                src={logoImg}
+                alt="Zemtro_tour Logo"
+                className="w-10 h-10 object-cover rounded-xl shadow-orange group-hover:scale-105 transition-transform bg-white border border-white/40"
+              />
               <div>
                 <span className={`text-2xl font-display font-bold tracking-tight ${logoColor} transition-colors`}>
-                  Wander<span className="text-brand-orange">ly</span>
+                  Zemtro<span className="text-brand-orange">_tour</span>
                 </span>
               </div>
             </Link>

@@ -190,7 +190,7 @@ export default function BookingFlow() {
                             <div className="grid grid-cols-2 gap-3 mt-3">
                               <div>
                                 <label className="text-xs text-gray-500 mb-1 block">Phone Number</label>
-                                <input type="tel" placeholder="+91 98765 43210" defaultValue={user?.phone} className="input-field" />
+                                <input type="tel" placeholder="+91 9329781327" defaultValue={user?.phone} className="input-field" />
                               </div>
                               <div>
                                 <label className="text-xs text-gray-500 mb-1 block">Email</label>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, Phone, Mail, Instagram, Facebook, Twitter, Youtube, MapPin, ArrowRight } from 'lucide-react';
+import logoImg from '../../assets/zemtro_tour_logo.png';
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-2xl font-display font-bold text-white">Ready for your next adventure?</h3>
-            <p className="text-white/80 mt-1">Join 50,000+ happy travelers who've explored India with Wanderly.</p>
+            <p className="text-white/80 mt-1">Join 50,000+ happy travelers who've explored India with Zemtro_tour.</p>
           </div>
           <div className="flex gap-3">
             <Link to="/packages" className="bg-white text-brand-orange font-bold px-6 py-3 rounded-2xl hover:bg-orange-50 transition-all shadow-lg flex items-center gap-2">
@@ -28,11 +29,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-brand-orange rounded-xl flex items-center justify-center">
-                <Globe size={18} className="text-white" />
-              </div>
-              <span className="text-2xl font-display font-bold">Wander<span className="text-brand-orange">ly</span></span>
+            <Link to="/" className="flex items-center gap-2.5 mb-4">
+              <img
+                src={logoImg}
+                alt="Zemtro_tour Logo"
+                className="w-10 h-10 object-cover rounded-xl bg-white p-0.5 shadow-md"
+              />
+              <span className="text-2xl font-display font-bold">Zemtro<span className="text-brand-orange">_tour</span></span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               India's premium travel booking platform. We craft unforgettable journeys across every corner of incredible India — from the Himalayas to the backwaters.
@@ -50,10 +53,26 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-            <div className="mt-5 space-y-2 text-sm text-gray-400">
-              <div className="flex items-center gap-2"><Phone size={14} /> +91 98765 43210</div>
-              <div className="flex items-center gap-2"><Mail size={14} /> hello@wanderly.in</div>
-              <div className="flex items-center gap-2"><MapPin size={14} /> 123 Travel Street, Bhopal, MP 462001</div>
+            <div className="mt-5 space-y-2.5 text-sm text-gray-400">
+              <div>
+                <a href="tel:+919329781327" className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Phone size={14} className="text-brand-orange" /> +91 9329781327
+                </a>
+              </div>
+              <div>
+                <a href="https://wa.me/919329781327" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors">
+                  <span className="text-base">💬</span> WhatsApp: +91 9329781327
+                </a>
+              </div>
+              <div>
+                <a href="mailto:info@zemtrotour.com" className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Mail size={14} className="text-brand-orange" /> info@zemtrotour.com
+                </a>
+              </div>
+              <div className="flex items-start gap-2 text-xs text-gray-400 leading-relaxed pt-1">
+                <MapPin size={16} className="text-brand-orange flex-shrink-0 mt-0.5" />
+                <span>Umsohkhlur, JV2W+894 Block-1, Mawroh, Mawlai-Mawïong, Shillong, Meghalaya 793008</span>
+              </div>
             </div>
           </div>
 
@@ -118,7 +137,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-gray-500 text-sm">© 2024 Wanderly Travel Pvt. Ltd. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">© 2024 Zemtro_tour Travel Pvt. Ltd. All rights reserved.</p>
           <div className="flex items-center gap-4 text-gray-500 text-sm">
             <span>🔒 SSL Secured</span>
             <span>✅ IATA Certified</span>
